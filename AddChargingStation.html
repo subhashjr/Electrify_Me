@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#navbar').load("AdminNavbar.html");
+            $('#footer').load("Footer.html");
+        });
+    </script>
+    <title>EV Charging Station Finder</title>
+    <style>
+        body {
+            background-image: url(images/evimg45.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            background-color: white;
+            margin: 50px auto;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 800px;
+        }
+
+        .form-group {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            font-size: 20px;
+            font-weight: 500;
+            margin-right: 10px;
+        }
+
+        .form-group input[type="text"],
+        .form-group select {
+            border: 2px solid black;
+            color: black;
+            font-size: 18px;
+            padding: 6px; /* Adjusted padding */
+            flex: 1;
+            border-radius: 5px;
+        }
+
+        .form-group select {
+            width: auto;
+            padding-left: 10px;
+        }
+
+        button[type="submit"] {
+            font-size: 24px;
+            font-weight: 600;
+            background-color: rgb(43, 64, 77);
+            color: white;
+            border: none;
+            padding: 8px 16px; /* Adjusted padding */
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button[type="submit"]:hover {
+            background-color: rgb(128, 156, 234);
+        }
+    </style>
+</head>
+<body>
+    <div id="navbar"></div>
+    <div class="container">
+        <form method="post" action="AddChargingStation.php">
+            <div class="form-group">
+                <label>Name of Station:</label>
+                <input type="text" name="name">
+            </div>
+
+            <div class="form-group">
+                <label>State:</label>
+                <input type="text" name="State">
+                <label>City:</label>
+                <input type="text" name="City">
+            </div>
+
+            <div class="form-group">
+                <label>Address:</label>
+                <input type="text" name="address">
+            </div>
+
+            <div class="form-group">
+                <label>Number of 2 wheeler ports:</label>
+                <select name="No_of_2wheeler_ports">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+
+                <label>Number of 4 wheeler ports:</label>
+                <select name="No_of_4wheeler_ports">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Charger Types Supported:</label>
+                <select name="Charger_type">
+                    <option value="Slow">Slow</option>
+                    <option value="Fast">Fast</option>
+                    <option value="Rapid">Rapid</option>
+                </select>
+
+                <label>Rate:</label>
+                <input type="text" name="rate">
+            </div>
+
+            <div style="text-align: center;">
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+
+    <div id="footer"></div>
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-image: url("images/evimg8.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+      #map {
+        width: 70%;
+        font-size: 24px;
+        margin-bottom: 20px;
+        color: rgb(21, 148, 221);
+        text-align: center;
+        margin-top: 20px;
+        font-weight: 500;
+        overflow-y: auto;
+        overflow-x: auto;
+        margin: 0 auto; /* Center the div horizontally */
+      }
+      #map .content {
+        height: auto;
+        width: 95%;
+        align-self: center;
+        margin: 15px;
+        border: 2px solid black;
+        font-size: 16px;
+        text-align: left;
+        display: flex;
+        padding: 10px;
+      }
+      #searchbox {
+        margin: 10px;
+        width: 28%;
+        align-items: center;
+        padding: 10px;
+        margin: 0 auto; /* Center the div horizontally */
+      }
+      .flex-container {
+        display: flex;
+        align-items: center;
+        justify-content: center; /* Center the content horizontally and vertically */
+      }
+      .flex-container img {
+        width: 30%;
+        margin: 10px;
+      }
+      .flex-container .description {
+        height: 400px;
+        width: 68%;
+        border: 2px solid black;
+        margin: 10px;
+        font-size: 18px;
+        padding: 20px;
+        line-height: 1.5;
+    
+      }
+      
+      
+      #map {
+         padding-bottom: 80px; 
+      }
+
+
+
+    </style>
+    <script>
+      $(document).ready(function() {
+        $("#navbar").load("Navbar.html");
+        $("#searchbox").load("searchbox.html");
+        $("#footer").load("Footer.html");
+      });
+
+      function displaySelected(str) {
+        if (str == "") {
+          document.getElementById("map").innerHTML = "";
+          return;
+        } else {
+          var xmlhttp = new XMLHttpRequest();
+          xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+              document.getElementById("map").innerHTML = this.responseText;
+            }
+          };
+          xmlhttp.open("GET", "FindStations.php?c=" + str, true);
+          xmlhttp.send();
+        }
+      }
+
+      function bookStation(id) {
+        window.location.href = "Bookings.php?".concat(id);
+      }
+    </script>
+
+    <title>EV Charging Station Finder</title>
+  </head>
+  <body>
+    <div id="navbar"></div>
+    <div class="flex-container">
+      <div id="searchbox"></div>
+    </div>
+    <div id="map" style="color:rgb(5, 139, 139);">
+      <h2>Search Results</h2>
+      <div class="content" style="color: rgb(5, 139, 139);">
+        No city selected
+      </div>
+    </div>
+    <div class="flex-container">
+    </div>
+    <div id="footer"></div>
+  </body>
+</html>

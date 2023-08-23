@@ -1,0 +1,119 @@
+body{
+    height: 100%;
+    
+  }
+  video.background {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: -1;
+    min-width: 100%;
+    min-height: 100%;
+    -webkit-filter: blur(4px); 
+     filter: blur(5px);
+    }
+
+  
+  .libimg{
+    width: 50em;
+    height: 20em;
+  }
+
+  #forgot:hover {
+    color: blue;
+
+  }
+  .bg-text {
+    
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0, 0.4); 
+    color: white;
+    font-weight: bold;
+    
+    border: 2px solid white;
+    position: absolute;
+    left: 30%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    width: 50em;
+    height: 10em;
+    padding: 0px;
+    text-align: center;
+  }
+  p.text{
+    padding-top: 2%;
+    font-weight: bold;
+    color: #f1f1f1;
+    font-size: 2em;
+    font-family: "Sofia",sans-serif;
+    
+  }
+  p.text:hover{
+      font-size: 3em;
+      cursor: pointer;
+
+  }
+
+
+
+
+
+
+  @import url('https://fonts.googleapis.com/css?family=Roboto:700');
+
+div.cont{
+  font-family:'Roboto';
+  
+}
+p.lt{
+  text-shadow: 0 0 7px rgba(255,255,255,.3), 0 0 3px rgba(255,255,255,.3);
+}
+.cont {
+  color: #e5e5e5;
+  font-size: 2.26rem;
+  text-transform: uppercase;
+  height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.anime {
+  height:50px;
+  overflow:hidden;
+  margin-left: 1rem;
+}
+
+.anime > div > div {
+  padding: 0.25rem 0.75rem;
+  height:2.81rem;
+  margin-bottom: 2.81rem;
+  display:inline-block;
+}
+
+.anime div:first-child {
+  animation: text-animation 10s infinite;
+}
+
+div.first {
+  background-color:#3e473ad7;
+}
+div.second{
+  background-color:#68475d;
+}
+div.third{
+  background-color:#000000;
+}
+
+@keyframes text-animation {
+  0% {margin-top: 0;}
+  10% {margin-top: 0;}
+  20% {margin-top: -3.62rem;}
+  30% {margin-top: -3.70rem;}
+  40% {margin-top: -7.62rem;}
+  60% {margin-top: -6.62rem;}
+  70% {margin-top: -6.62rem;}
+  80% {margin-top: -6.62rem;}
+  90% {margin-top: 0;}
+  100% {margin-top: 0;}
+}
